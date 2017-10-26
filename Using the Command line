@@ -4,3 +4,13 @@ https://docs.microsoft.com/en-us/windows-server/get-started/sconfig-on-ws2016
 
 
 Sconfig.cmd
+
+
+Creatign a new domain and installing the necessary features:
+Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
+Install-ADDSForest -DomainName "corp.contoso.com"
+
+Note that you can install all of the Windows Server 2012 server roles by using the command Install-WindowsFeature, which really streamlines the configuration of servers.
+
+To join to a Domain via Powershell:
+Add-Computer –DomainName mylab.local –Credential (Get-Credential)
